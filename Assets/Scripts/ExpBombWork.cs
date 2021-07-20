@@ -5,15 +5,12 @@ using UnityEngine;
 public class ExpBombWork : MonoBehaviour
 {
     Collider newCollider, playerCollider;
-    GameObject player;
     bool collideWithPlayer = false;
     float time = 0.5f;
 
     private void Awake()
     {
-        player = GameObject.Find("XR Rig");
         newCollider = GetComponent<Collider>();
-        playerCollider = player.GetComponent<Collider>();
     }
 
     private void Update()
