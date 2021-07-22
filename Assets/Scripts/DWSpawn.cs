@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class DWSpawn : MonoBehaviour
 {
+    GameObject[] DWalls;
     [SerializeField] GameObject DW;
     int width = 11, height = 11;
     [SerializeField] float chance = 0.5f;
+
     void Start()
     {
+        DWalls = GameObject.FindGameObjectsWithTag("DW");
+        foreach (GameObject DWall in DWalls)
+            Destroy(DWall);
         for (int i = 0; i < width - 2; i++)
             if (Random.value < chance)
                 Instantiate(DW, new Vector3(i + 2.5f, 0.5f, -5.5f), Quaternion.identity);
@@ -23,6 +28,7 @@ public class DWSpawn : MonoBehaviour
             for (int j = 0; j < height / 2 - 1; j++)
                 if (Random.value < chance)
                     Instantiate(DW, new Vector3(i * 2 + 0.5f, 0.5f, - j * 2 - 8.5f), Quaternion.identity);
+        Destroy(gameObject);
 
     }
 }

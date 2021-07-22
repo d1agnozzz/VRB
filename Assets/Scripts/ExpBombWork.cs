@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class ExpBombWork : MonoBehaviour
 {
-    Collider newCollider, playerCollider;
+    [SerializeField] GameObject explod;
+    Collider newCollider;
     bool collideWithPlayer = false;
-    float time = 0.5f;
+    float timeOfTrigger = 0.5f, timer = 3.0f;
 
     private void Awake()
     {
@@ -15,9 +16,15 @@ public class ExpBombWork : MonoBehaviour
 
     private void Update()
     {
-        time -= Time.deltaTime;
-        if (time < 0 && !collideWithPlayer)
+        timeOfTrigger -= Time.deltaTime;
+        timer -= Time.deltaTime;
+        if (timeOfTrigger < 0 && !collideWithPlayer)
             newCollider.isTrigger = false;
+        if (timer < 0)
+        {
+            Instantiate(explod, transform.position, transform.rotation * Quaternion.Euler(90f, 0f, 0f));
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
