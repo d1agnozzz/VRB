@@ -9,9 +9,11 @@ public class BombsCreating : MonoBehaviour
     public InputActionReference gripReference = null;
     bool handIn = false;
     bool smthInHand = false;
+    RespawnProvider Bombs;
 
     private void Awake()
     {
+        Bombs = GameObject.Find("XR Rig").GetComponent<RespawnProvider>();
         gripReference.action.started += NewBomb;
     }
 
@@ -50,10 +52,10 @@ public class BombsCreating : MonoBehaviour
 
     private void NewBomb(InputAction.CallbackContext context)
     {
-        if (handIn && !smthInHand)
+        if (handIn && !smthInHand && Bombs.bombsNumber > 0)
         {
             Instantiate(bomb, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-            //Debug.Log("Created");
+            Bombs.bombsNumber--;
         }
     }
 }

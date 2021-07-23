@@ -5,6 +5,7 @@ using UnityEngine;
 public class RespawnProvider : MonoBehaviour
 {
     [SerializeField] GameObject spawn;
+    public int bombsNumber = 1;
     private void OnParticleCollision(GameObject other)
     {
         transform.position = new Vector3(0.5f, 0.05f, -5.5f);

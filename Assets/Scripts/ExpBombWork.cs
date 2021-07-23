@@ -8,9 +8,11 @@ public class ExpBombWork : MonoBehaviour
     Collider newCollider;
     bool collideWithPlayer = false;
     float timeOfTrigger = 0.5f, timer = 3.0f;
+    RespawnProvider Bombs;
 
     private void Awake()
     {
+        Bombs = GameObject.Find("XR Rig").GetComponent<RespawnProvider>();
         newCollider = GetComponent<Collider>();
     }
 
@@ -22,6 +24,7 @@ public class ExpBombWork : MonoBehaviour
             newCollider.isTrigger = false;
         if (timer < 0)
         {
+            Bombs.bombsNumber++;
             Instantiate(explod, transform.position, transform.rotation * Quaternion.Euler(90f, 0f, 0f));
             Destroy(gameObject);
         }
@@ -29,14 +32,14 @@ public class ExpBombWork : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject.name + " entered");
+        //Debug.Log(other.gameObject.name + " entered");
         if (other.gameObject.name == "XR Rig")
             collideWithPlayer = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log(other.gameObject.name + " exited");
+        //Debug.Log(other.gameObject.name + " exited");
         if (other.gameObject.name == "XR Rig")
             collideWithPlayer = false;
     }

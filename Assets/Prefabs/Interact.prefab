@@ -91,7 +91,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5048257183805427005}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -110,3 +110,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotSpeed: 10
   UDSpeed: 0.1
+  exploding: {fileID: 968369995830560166, guid: c6cec2bc70c6e7844a89f96eb575c6b8, type: 3}
