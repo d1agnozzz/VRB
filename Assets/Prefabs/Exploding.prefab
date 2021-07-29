@@ -3849,15 +3849,16 @@ ParticleSystem:
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 2
-    inside: 1
+    inside: 0
     outside: 0
-    enter: 0
+    enter: 2
     exit: 0
     colliderQueryMode: 0
     radiusScale: 1
-    primitives: []
+    primitives:
+    - {fileID: 1231919854969024460, guid: d90bcf1ba4fb5c5468b7b6b14d8a7e81, type: 3}
   SubModule:
     serializedVersion: 2
     enabled: 0

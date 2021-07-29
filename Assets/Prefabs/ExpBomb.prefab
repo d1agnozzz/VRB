@@ -109,3 +109,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explod: {fileID: 968369995830560166, guid: c6cec2bc70c6e7844a89f96eb575c6b8, type: 3}
+  newCollider: {fileID: 8821655816626040606}
+  Bombs: {fileID: 2964004788034531531, guid: 5284b63a67843c54cb61de992b8d920e, type: 3}

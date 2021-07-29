@@ -5,7 +5,7 @@ using UnityEngine;
 public class ExpBombWork : MonoBehaviour
 {
     [SerializeField] GameObject explod;
-    Collider newCollider;
+    [SerializeField] Collider newCollider;
     bool collideWithPlayer = false;
     float timeOfTrigger = 0.5f, timer = 3.0f;
     RespawnProvider Bombs;
@@ -13,7 +13,6 @@ public class ExpBombWork : MonoBehaviour
     private void Awake()
     {
         Bombs = GameObject.Find("XR Rig").GetComponent<RespawnProvider>();
-        newCollider = GetComponent<Collider>();
     }
 
     private void Update()
@@ -42,5 +41,12 @@ public class ExpBombWork : MonoBehaviour
         //Debug.Log(other.gameObject.name + " exited");
         if (other.gameObject.name == "XR Rig")
             collideWithPlayer = false;
+    }
+
+    private void OnParticleCollision(GameObject other)
+    {
+        Bombs.bombsNumber++;
+        Instantiate(explod, transform.position, transform.rotation * Quaternion.Euler(90f, 0f, 0f));
+        Destroy(gameObject);
     }
 }

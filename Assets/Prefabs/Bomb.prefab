@@ -233,3 +233,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   expBomb: {fileID: 6135477473060991832, guid: 96404b7fd6425464199eb7fa6f41f65d, type: 3}
+  newCollider: {fileID: 5727417971794544061}
