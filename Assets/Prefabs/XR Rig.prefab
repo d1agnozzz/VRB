@@ -422,6 +422,7 @@ GameObject:
   - component: {fileID: 7266824116220893714}
   - component: {fileID: 7266824116220893741}
   - component: {fileID: 7266824116220893712}
+  - component: {fileID: 512370919}
   m_Layer: 7
   m_Name: RightHand Controller
   m_TagString: Untagged
@@ -458,7 +459,7 @@ MonoBehaviour:
   m_UpdateTrackingType: 0
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_ModelPrefab: {fileID: 3704750306662080066, guid: 76cb3024cc871a24bb23ba50249f2f1a, type: 3}
+  m_ModelPrefab: {fileID: 0}
   m_ModelParent: {fileID: 0}
   m_Model: {fileID: 0}
   m_AnimateModel: 0
@@ -654,6 +655,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bomb: {fileID: 8965908799074883181, guid: 1257e62517097b341bed689fc3e5c519, type: 3}
   gripReference: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+--- !u!114 &512370919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7266824116220893743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c850d0e001f1e14fa7fd80dea13a947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gripReference: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  triggerReference: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  handModelPrefab: {fileID: 5686134208185362930, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
 --- !u!1 &7266824117028637244
 GameObject:
   m_ObjectHideFlags: 0
@@ -667,6 +683,7 @@ GameObject:
   - component: {fileID: 7266824117028637219}
   - component: {fileID: 7266824117028637218}
   - component: {fileID: 7266824117028637217}
+  - component: {fileID: 27322601}
   m_Layer: 7
   m_Name: LeftHand Controller
   m_TagString: Untagged
@@ -703,7 +720,7 @@ MonoBehaviour:
   m_UpdateTrackingType: 0
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_ModelPrefab: {fileID: 3704750306662080066, guid: 76cb3024cc871a24bb23ba50249f2f1a, type: 3}
+  m_ModelPrefab: {fileID: 0}
   m_ModelParent: {fileID: 0}
   m_Model: {fileID: 0}
   m_AnimateModel: 0
@@ -899,6 +916,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bomb: {fileID: 8965908799074883181, guid: 1257e62517097b341bed689fc3e5c519, type: 3}
   gripReference: {fileID: -6131295136447488360, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+--- !u!114 &27322601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7266824117028637244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c850d0e001f1e14fa7fd80dea13a947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gripReference: {fileID: -6131295136447488360, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  triggerReference: {fileID: -5982496924579745919, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  handModelPrefab: {fileID: 109434732395284509, guid: 65847589f926b734d9eaed6e25f0046b, type: 3}
 --- !u!1001 &7266824116755983924
 PrefabInstance:
   m_ObjectHideFlags: 0
