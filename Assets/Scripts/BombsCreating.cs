@@ -6,10 +6,16 @@ using UnityEngine.InputSystem;
 public class BombsCreating : MonoBehaviour
 {
     [SerializeField] GameObject bomb;
+    public float diseaseTime = -1.0f;
     public InputActionReference gripReference = null;
     bool handIn = false;
     bool smthInHand = false;
     RespawnProvider Bombs;
+
+    private void Update()
+    {
+        diseaseTime -= Time.deltaTime;
+    }
 
     private void Awake()
     {
@@ -52,7 +58,7 @@ public class BombsCreating : MonoBehaviour
 
     private void NewBomb(InputAction.CallbackContext context)
     {
-        if (handIn && !smthInHand && Bombs.bombsNumber > 0)
+        if (handIn && !smthInHand && Bombs.bombsNumber > 0 && diseaseTime < 0.0f)
         {
             Instantiate(bomb, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
             Bombs.bombsNumber--;

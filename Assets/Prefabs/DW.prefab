@@ -108,3 +108,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25a6160e10dfb254c9fcb91c1d14c8d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnRate: 0.5
+  interSpawnRate: 0.5
+  Inter1: {fileID: 7198226777378719327, guid: 29c8db4341d7a1646bbb47b0d06263ed, type: 3}
+  Inter2: {fileID: 779776167236668635, guid: e72fde39ff4851240bf2a7ebdd931155, type: 3}
+  Inter3: {fileID: 742042181148574899, guid: 7b376e4d02a76254cb524482ad4be87b, type: 3}
