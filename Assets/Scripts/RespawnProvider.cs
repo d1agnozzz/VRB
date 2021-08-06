@@ -16,9 +16,11 @@ public class RespawnProvider : MonoBehaviour
     Scene scene;
     ActionBasedContinuousMoveProvider continuousMoveProvider;
     BombsCreating Bombs1, Bombs2;
+    Counter counter;
 
     private void Start()
     {
+        counter = GameObject.Find("Counter").GetComponent<Counter>();
         continuousMoveProvider = GameObject.Find("XR Rig").GetComponent<ActionBasedContinuousMoveProvider>();
         Bombs1 = GameObject.Find("LeftHand Controller").GetComponent<BombsCreating>();
         Bombs2 = GameObject.Find("RightHand Controller").GetComponent<BombsCreating>();
@@ -57,6 +59,12 @@ public class RespawnProvider : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
+        counter.looses++;
+        if (counter.looses == 2)
+        {
+            counter.wins = 0;
+            counter.looses = 0;
+        }
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
     }
@@ -97,5 +105,16 @@ public class RespawnProvider : MonoBehaviour
             }
             Destroy(hit.gameObject);
         }
+        else if (hit.gameObject.name == "KillZone")
+        {
+            counter.looses++;
+            if (counter.looses == 2)
+            {
+                counter.wins = 0;
+                counter.looses = 0;
+            }
+            Scene scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(scene.name);
+        }    
     }
 }
