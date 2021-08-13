@@ -35,7 +35,7 @@ public class BombsWork : MonoBehaviour
             xp = Mathf.Ceil(player.position.x) - 0.5f;
             zp = Mathf.Ceil(player.position.z) - 0.5f;
             if (!(Mathf.Abs(x - xp) > 1.5f || Mathf.Abs(z - zp) > 1.5f || Mathf.Abs(x - xp) > 0.5f && Mathf.Abs(z - zp) > 0.5f))
-                Instantiate(expBomb, new Vector3(x, 0.5f, z), Quaternion.identity);
+                Instantiate(expBomb, new Vector3(x, 0.5f, z), expBomb.transform.rotation);
             else
                 Bombs.bombsNumber++;
             Destroy(gameObject);

@@ -245,6 +245,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exploding: {fileID: 968369995830560166, guid: c6cec2bc70c6e7844a89f96eb575c6b8, type: 3}
+  slowChance: 0.33
+  LPChance: 0.33
+  diseaseTime: 10
   slowDiseaseTime: 10
   LPDiseaseTime: 10
   bombsNumber: 1
@@ -658,7 +661,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39613a4bdc7b4a746a6934fd17af0d89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bomb: {fileID: 8965908799074883181, guid: 1257e62517097b341bed689fc3e5c519, type: 3}
+  bomb: {fileID: 3135727315474965675, guid: cf3c84159e07bbf4098b3fa4f457ef35, type: 3}
   diseaseTime: -1
   gripReference: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!114 &512370919
@@ -920,7 +923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39613a4bdc7b4a746a6934fd17af0d89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bomb: {fileID: 8965908799074883181, guid: 1257e62517097b341bed689fc3e5c519, type: 3}
+  bomb: {fileID: 3135727315474965675, guid: cf3c84159e07bbf4098b3fa4f457ef35, type: 3}
   diseaseTime: -1
   gripReference: {fileID: -6131295136447488360, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!114 &27322601
