@@ -60,7 +60,7 @@ public class BombsCreating : MonoBehaviour
     {
         if (handIn && !smthInHand && Bombs.bombsNumber > 0 && diseaseTime < 0.0f)
         {
-            Instantiate(bomb, new Vector3(transform.position.x, transform.position.y, transform.position.z), bomb.transform.rotation);
+            Instantiate(bomb, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
             Bombs.bombsNumber--;
         }
     }
