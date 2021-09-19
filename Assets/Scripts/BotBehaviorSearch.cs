@@ -8,8 +8,9 @@ public class BotBehaviorSearch : BotBehaviorState
     
 
     private bool isWandering;
-    private NavMeshAgent agent;
     private Vector3 destinationCurrent;
+    private float wanderingTimer = 3f;
+
     
     
 
@@ -18,48 +19,72 @@ public class BotBehaviorSearch : BotBehaviorState
     {
         Debug.Log("Enter SEARCH behavior");
         isWandering = false;
-        agent = context.GetComponent<NavMeshAgent>();
     }
     #endregion
 
     #region EXIT
-    public void Exit()
+    public override void Exit()
     {
         Debug.Log("Exit SEARCH behavior");
     }
     #endregion
 
     // возвращает случайную точку с навмэша 
-    public static Vector3 RandomNavSphere(Vector3 origin, float distance, int layermask)
-    {
-        Vector3 randomDirection = UnityEngine.Random.insideUnitSphere * distance;
-
-        randomDirection += origin;
-
-        NavMeshHit navHit;
-
-        NavMesh.SamplePosition(randomDirection, out navHit, distance, layermask);
-
-        return navHit.position;
-    }
+    
 
 
 
     override public void Update()
     {
-        Debug.Log("Update SEARCH behavior");
+
+        wanderingTimer -= Time.deltaTime;
+
+        //Debug.Log("Update SEARCH behavior for " + context.name);
+
+        
+
+        //if (ExpBombWork.IsThereBombs()) {
+        //    ExpBombWork closestBomb = ExpBombWork.FindClosestBomb(context.transform.position);
+        //    if ((closestBomb.transform.position - context.transform.position).sqrMagnitude < bombTriggerRange * bombTriggerRange)
+        //    {
+        //        Ray ray = new Ray(context.transform.position, context.transform.forward);
+        //        RaycastHit bombInSight;
+        //        if (Physics.Raycast(ray, out bombInSight))
+        //        {
+        //            if (bombInSight.collider.GetComponent<ExpBombWork>())
+        //            {
+        //                //context.SetBehavior(new BotBehaviorRunaway());
+
+        //            }
+        //        }
+        //    }
+  
+        //}
+
+
+        if (Bomberman.IsThereBombers() && (Bomberman.FindClosestBomber(context.transform.position).transform.position-context.transform.position).sqrMagnitude <= bomberTriggerRange * bomberTriggerRange)
+        {
+            context.SetBehavior(new BotBehaviorAttack());
+        }
 
         if (isWandering == false)
         {
-            Vector3 destinationNew = RandomNavSphere(context.transform.position, context.wanderRadius, -1);
+            NavMeshQueryFilter mask = new NavMeshQueryFilter();
+            mask.areaMask = (1 << NavMesh.GetAreaFromName("Walkable"));
+
+
+
+
+            Vector3 destinationNew = RandomNavSphere(context.transform.position, context.wanderRadius, mask.areaMask);
             context.MoveTo(destinationNew);
             destinationCurrent = destinationNew;
             isWandering = true;
 
         }
-        if (Vector3.Distance(context.transform.position, destinationCurrent) < 0.1)
+        if (Vector3.Distance(context.transform.position, destinationCurrent) < 0.1 || wanderingTimer <= 0)
         {
             isWandering = false;
+            wanderingTimer = 3f;
         }
     }
 }

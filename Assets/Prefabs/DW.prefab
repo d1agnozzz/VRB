@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3194550668283336374}
   - component: {fileID: 4968178340110565452}
   - component: {fileID: 2942703130061786412}
+  - component: {fileID: 2860232965962375152}
   m_Layer: 0
   m_Name: DW
   m_TagString: DW
@@ -113,3 +114,19 @@ MonoBehaviour:
   Inter1: {fileID: 7198226777378719327, guid: 29c8db4341d7a1646bbb47b0d06263ed, type: 3}
   Inter2: {fileID: 779776167236668635, guid: e72fde39ff4851240bf2a7ebdd931155, type: 3}
   Inter3: {fileID: 742042181148574899, guid: 7b376e4d02a76254cb524482ad4be87b, type: 3}
+--- !u!208 &2860232965962375152
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6866283836669392435}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.01
+  m_Carve: 1
+  m_CarveOnlyStationary: 0
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

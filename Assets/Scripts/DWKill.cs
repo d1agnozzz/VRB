@@ -6,9 +6,10 @@ public class DWKill : MonoBehaviour
 {
     [SerializeField] float spawnRate = 0.5f, interSpawnRate = 0.5f;
     [SerializeField] GameObject Inter1, Inter2, Inter3;
+    [SerializeField] bool d_DontKill = false;
     private void Start()
     {
-        if (Random.Range(0.0f, 1.0f) > spawnRate)
+        if (Random.Range(0.0f, 1.0f) > spawnRate && !d_DontKill)
             Destroy(gameObject);
     }
 
