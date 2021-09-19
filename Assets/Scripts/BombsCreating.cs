@@ -58,9 +58,12 @@ public class BombsCreating : MonoBehaviour
 
     private void NewBomb(InputAction.CallbackContext context)
     {
-        if (handIn && !smthInHand && Bombs.bombsNumber > 0 && diseaseTime < 0.0f)
+        if (handIn && !smthInHand && Bombs.bombsNumber > 0 && diseaseTime < 0.0f && GetComponent<Bomberman>().CanPlant())
         {
-            Instantiate(bomb, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
+            GameObject bombTemp = Instantiate(bomb, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
+            bombTemp.GetComponent<BombsWork>().owner = this.GetComponent<Bomberman>();
+            GetComponent<Bomberman>().BombPlanted();
+            
             Bombs.bombsNumber--;
         }
     }
