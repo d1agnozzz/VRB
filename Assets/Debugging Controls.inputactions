@@ -1,0 +1,33 @@
+{
+    "name": "Debugging Controls",
+    "maps": [
+        {
+            "name": "MouseKeyboard",
+            "id": "b8db5794-056f-4df3-8104-740c5b77453e",
+            "actions": [
+                {
+                    "name": "MoveToPointer",
+                    "type": "Button",
+                    "id": "66923516-4501-4a06-bbad-93861b4afb77",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "9cce60ad-f89b-4f63-bf33-8798bd62e515",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveToPointer",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
